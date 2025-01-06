@@ -1,4 +1,4 @@
-.h-wrapper {
+/* .h-wrapper {
   color: white;
   z-index: 99;
   width: 100%;
@@ -50,5 +50,97 @@
     z-index: 99;
   }
 }
+.h-wrapper {
+  color: white;
+  z-index: 99;
+  width: 100%;
+  background: transparent; /* Changed to transparent */
+  backdrop-filter: blur(8px); /* Optional: adds a blur effect for better text visibility */
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: background 0.3s ease; /* Smooth transition for background changes */
+}
 
+/* Optional: Add this if you want the navbar to have a background when scrolling */
+.h-wrapper.scrolled {
+  background: rgba(var(--primary), 0.9); /* Semi-transparent background */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 
+.h-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  color: var(--secondary);
+  max-width: 1200px; /* Optional: limit maximum width */
+  margin: 0 auto; /* Optional: center the container */
+}
+
+.h-menu {
+  display: flex;
+  gap: 2rem;
+  font-size: 1rem;
+}
+
+.h-menu > * {
+  transition: transform 0.2s ease; /* Smooth transition for hover effect */
+}
+
+.h-menu > *:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.menu-icon {
+  display: none;
+  font-size: 1.5rem; /* Slightly reduced size */
+  cursor: pointer;
+  padding: 0.5rem; /* Add padding for better touch target */
+  border-radius: 4px;
+}
+
+@media (max-width: 870px) {
+  .h-container {
+    padding: 1rem; /* Reduced padding for mobile */
+  }
+
+  .menu-icon {
+    display: block;
+    position: relative;
+    z-index: 100;
+  }
+
+  .h-menu {
+    display: none;
+    color: var(--black);
+    position: absolute;
+    top: 100%; /* Position right below header */
+    right: 0; /* Full width dropdown */
+    left: 0; /* Full width dropdown */
+    background: rgba(255, 255, 255, 0.95); /* Slightly transparent background */
+    flex-direction: column;
+    font-weight: 500;
+    gap: 1rem;
+    padding: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(-10px); /* Reduced transform distance */
+  }
+
+  .h-menu > * {
+    padding: 0.75rem; /* Add padding for better touch targets */
+    width: 100%; /* Full width menu items */
+    text-align: center; /* Center text */
+  }
+
+  .h-menu.active {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+ */
