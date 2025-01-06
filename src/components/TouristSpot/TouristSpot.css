@@ -1,0 +1,275 @@
+.tourist-spot {
+  padding: 20px;
+  background: url('/TouristSpot.jpg') no-repeat center center;
+  background-size: cover;
+  color: white;
+  text-align: left;
+  position: relative;
+  min-height: 90vh;
+}
+
+.tourist-spot::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.paddings {
+  padding: 1.5rem;
+}
+
+.innerWidth {
+  width: 100%;
+  margin: auto;
+  max-width: 1200px;
+  position: relative;
+  z-index: 2;
+}
+
+.tourist-header {
+  margin-bottom: 40px;
+  position: relative;
+  z-index: 2;
+}
+
+.orangeText {
+  font-size: 3.5rem;
+  color: #f39c12;
+}
+
+.primaryText {
+  font-size: 2rem;
+  color: #ffffff;
+  display: block;
+  margin-top: 10px;
+}
+
+.categories-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 30px;
+  margin-top: 30px;
+  position: relative;
+  z-index: 2;
+}
+
+.category-card {
+  background: white;
+  border-radius: 8px;
+  width: 210px;
+  height: 240px;
+  padding: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  transition: transform 0.3s ease;
+  margin: auto;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.category-card:hover {
+  transform: translateY(-5px);
+}
+
+.category-icon {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  margin-bottom: 10px;
+  border-radius: 0;
+}
+
+.category-name {
+  color: #333;
+  font-size: 1.3rem;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.explore-button {
+  padding: 10px 25px;
+  background-color: #f39c12;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+.explore-button:hover {
+  background-color: #e67e22;
+}
+
+.spots-container {
+  margin-top: 30px;
+  display: none;
+  position: relative;
+  z-index: 2;
+}
+
+.spots-container.active {
+  display: block;
+}
+
+.tourist-card {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  max-width: 810px;
+  max-height: 800px;
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+}
+
+.tourist-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.description-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  padding: 20px;
+}
+
+.image-container:hover .description-overlay {
+  opacity: 1;
+}
+
+.description-overlay p {
+  color: white;
+  font-size: 1.7rem !important;
+  text-align: center;
+  margin: 0;
+  line-height: 1.5;
+  padding: 30px;
+}
+
+.tourist-card-content {
+  padding: 20px;
+  color: #333;
+}
+
+.tourist-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.tourist-card p {
+  margin: 8px 0;
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.directions-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: background-color 0.3s;
+}
+
+.directions-button:hover {
+  background-color: #2980b9;
+}
+
+.category-title {
+  color: white;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.slider-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.slider-button {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 24px;
+}
+
+.slider-button:hover {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.slider-counter {
+  color: white;
+  font-size: 1.1rem;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+  .categories-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .categories-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .category-card {
+    width: 180px;
+    height: 220px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .categories-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .category-card {
+    width: 100%;
+    max-width: 250px;
+  }
+}

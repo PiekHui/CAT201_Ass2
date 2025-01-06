@@ -1,0 +1,14 @@
+.food-beverage {
+    padding: 50px 0;
+    text-align: center;
+  }
+  
+  .food-beverage h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .food-beverage p {
+    font-size: 1.1rem;
+    color: #555;
+  }

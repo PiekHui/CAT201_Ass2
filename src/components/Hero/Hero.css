@@ -1,0 +1,112 @@
+.hero-wrapper {
+    background: linear-gradient(180deg, rgb(19, 17, 35), #203273 100%); /* White, Yellow, Green */
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0;
+    overflow: hidden;
+  }
+  
+  /* Inner Container */
+  .hero-container {
+    background: var(--green);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+    padding: 2rem 0;
+  }
+  
+  /* Left Section */
+  .hero-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .hero-title h1 {
+    font-size: 3rem;
+    color: #ffffff;
+    line-height: 1.2;
+  }
+  
+  .hero-title .highlight-text {
+    color: #27ae60; /* Green Highlight for Penang */
+  }
+  
+  .hero-des span {
+    font-size: 1.2rem;
+    color: #ffffff;
+    margin-top: 0.5rem;
+  }
+  
+  /* Right Section */
+  .hero-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .hero-right .image-container img {
+    width: 100%;
+    max-width: 1000px;
+    height: 80vh;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgb(255, 254, 254);
+    margin: 0;
+  }
+  
+  /* Stats Section */
+  .stats {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    margin-top: 2rem;
+  }
+  
+  .stat {
+    text-align: center;
+  }
+  
+  .stat span:first-child {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #27ae60; /* Green for Numbers */
+  }
+  
+  .stat .secondaryText {
+    font-size: 1rem;
+    color: #ffffff;
+  }
+  
+  /* Center Alignment Utilities */
+  .flexCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .flexColStart {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .flexColCenter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Remove Search Bar (Optional if Present) */
+  .search-bar {
+    display: none; /* Hides the bar */
+  }
+  
