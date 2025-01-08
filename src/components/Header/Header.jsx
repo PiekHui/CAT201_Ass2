@@ -16,7 +16,6 @@ const Header = () => {
   return (
     <section className="h-wrapper">
       <div className="paddings innerWidth h-container">
-      {/* <div className="h-logo-nav"> */}
         <a href="/" style={{ cursor: "pointer" }}>
           <img src="./GeoPenang.png" alt="logo" width={120} />
         </a>
