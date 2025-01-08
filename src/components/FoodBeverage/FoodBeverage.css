@@ -1,14 +1,155 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  overflow: auto;
+}
+
+main {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+
 .food-beverage {
-    padding: 50px 0;
-    text-align: center;
+  height: 600px;
+}
+
+.food-beverage-swiper {
+  width: 100%;
+  height: 450px;
+  /* Adjust the height as needed */
+}
+
+.food-beverage-slide {
+  position: relative;
+  height: 100%;
+  /* Ensures that the slide takes the full height of the container */
+}
+
+.slide-content {
+  background-size: cover;
+  /* Ensures the image scales proportionally */
+  background-position: center;
+  height: 100%;
+  /* Makes sure the image fills the slide's container */
+  width: 100%;
+  border-radius: 10px;
+  /* Optional, for rounded corners */
+  transition: opacity 0.3s ease-in-out;
+  position: relative;
+}
+
+.content-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  z-index: 5;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+}
+
+.food-beverage-slide:hover .content-overlay {
+  opacity: 1;
+  visibility: visible;
+}
+
+.slide-title {
+  position: relative;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+}
+
+.slide-description {
+  font-size: 1rem;
+  color: white;
+  margin: 10px 0;
+}
+
+.read-more-btn {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.read-more-btn:hover {
+  background-color: rgba(255, 140, 0, 0.791);
+}
+
+.read-more-btn:active {
+  background-color: rgb(202, 89, 9);
+}
+
+.foodbeverage {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('foodbeverage.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding-top: 4rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.foodbeverage-header {
+  text-align: center;
+}
+
+.orangeText {
+  color: #ff6600;
+}
+
+.primaryText {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+@media (width > 650px) and (width < 900px) {
+  .food-beverage-swiper {
+    height: 350px;
+    /* Adjusted height for medium screens */
   }
-  
-  .food-beverage h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
+
+  .food-beverage-slide {
+    height: 100%;
   }
-  
-  .food-beverage p {
-    font-size: 1.1rem;
-    color: #555;
+
+  .slide-content {
+    height: 100%;
   }
+}
+
+@media (width < 650px) {
+  .food-beverage-swiper {
+    height: 300px;
+    /* Adjusted height for small screens */
+  }
+
+  .food-beverage-slide {
+    height: 100%;
+  }
+
+  .slide-content {
+    height: 100%;
+  }
+}

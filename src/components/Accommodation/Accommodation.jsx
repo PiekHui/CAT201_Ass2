@@ -28,21 +28,39 @@ const accommodations = [
   { type: "Homestay", name: "Aayu Melayu", price: "RM 250/night", venue: "Chulia Street", image: "/AayuMelayu.jpg", description: "Traditional Malay-style homestay.", buttonColor: "red", rating: 4.3, pack: "Up to 3 People"},
   { type: "Homestay", name: "Pine Muntri", price: "RM 350/night", venue: "Muntri Street", image: "/PineMuntri.jpg", description: "Stylish and spacious homestay in a quiet area.", buttonColor: "red", rating: 4.6, pack: "Up to 5 People"},
   { type: "Homestay", name: "Smell Rose Beach Garden", price: "RM 400/night", venue: "Batu Ferringhi", image: "/RoseBeach.jpg", description: "Relaxing retreat near the beach.", buttonColor: "red", rating: 4.4, pack: "Up to 6 People"},
+  { type: "Homestay", name: "Cheong Fatt Tze Mansion", price: "RM 450/night", venue: "Georgetown", image: "/CheongFattTze.jpg", description: "Iconic heritage mansion with unique architecture.", buttonColor: "red", rating: 4.8, pack: "Up to 4 People" },
 
   // Apartments
   { type: "Apartment", name: "Bayu Emas Apartment", price: "RM 300/night", venue: "Batu Ferringhi", image: "/BayuEmas.jpg", description: "Simple and affordable apartment by the sea.", buttonColor: "red", rating: 4.0, pack: "Up to 4" },
   { type: "Apartment", name: "10 Island Resort", price: "RM 500/night", venue: "Tanjung Bungah", image: "/10Island.jpg", description: "Modern apartments with stunning ocean views.", buttonColor: "red", rating: 4.5, pack: "Up to 6" },
   { type: "Apartment", name: "Tropicana 218 Macalister", price: "RM 600/night", venue: "Georgetown", image: "/Tropicana218.jpg", description: "Luxurious apartment in the heart of the city.", buttonColor: "red", rating: 4.7, pack: "Up to 5" },
   { type: "Apartment", name: "The Regency", price: "RM 450/night", venue: "Gurney Drive", image: "/TheRegency.jpg", description: "Spacious and comfortable apartment for families.", buttonColor: "red", rating: 4.4, pack: "Up to 5" },
-  { type: "Apartment", name: "Summerton Condo", price: "RM 550/night", venue: "Queensbay", image: "/Summerton.jpg", description: "Upscale condo near shopping and entertainment.", buttonColor: "red", rating: 4.6, pack: "Up to 6" }
+  { type: "Apartment", name: "Summerton Condo", price: "RM 550/night", venue: "Queensbay", image: "/Summerton.jpg", description: "Upscale condo near shopping and entertainment.", buttonColor: "red", rating: 4.6, pack: "Up to 6" },
+  { type: "Apartment", name: "Penang Sky Suites", price: "RM 580/night", venue: "Pulau Tikus", image: "/PenangSkySuites.jpg", description: "High-rise living with panoramic city views.", buttonColor: "red", rating: 4.8, pack: "Up to 5" },
 ];
 
 const sliderSettings = {
   spaceBetween: 20,
   slidesPerView: 3,
+  slidesPerGroup: 1,
+  speed: 500,
+  loop: false,
   breakpoints: {
-    768: { slidesPerView: 2 },
-    480: { slidesPerView: 1 },
+    1024: {
+      slidesPerView: 3,
+      spaceBetween: 20,
+      slidesPerGroup:1,
+    },
+    768: {
+      slidesPerView: 2,
+      spaceBetween: 15,
+      slidesPerGroup:2,
+    },
+    480: {
+      slidesPerView: 1,
+      spaceBetween: 10,
+      slidesPerGroup:1,
+    }
   },
 };
 
@@ -53,10 +71,6 @@ const Accommodation = () => {
   useEffect(() => {
     AOS.init({ duration: 2000 });
   }, []);
-
-  // const filteredAccommodations = accommodations.filter(
-  //   (item) => item.type === categories.find((cat) => cat.name === selectedCategory)?.type
-  // );
 
   const filteredAccommodations =
   selectedCategory === "All"
@@ -122,13 +136,37 @@ const Accommodation = () => {
 
 const SliderButtons = ({ activeIndex, totalSlides }) => {
   const swiper = useSwiper();
+  
+  const handleNext = () => {
+    const slidesToMove = window.innerWidth <= 480 ? 1 : 
+                        window.innerWidth <= 768 ? 2 : 3;
+    swiper.slideTo(activeIndex + slidesToMove);
+  };
+
+  const handlePrev = () => {
+    const slidesToMove = window.innerWidth <= 480 ? 1 : 
+                        window.innerWidth <= 768 ? 2 : 3;
+    swiper.slideTo(activeIndex - slidesToMove);
+  };
+
   return (
     <div className="flexCenter slider-buttons">
-      <button onClick={() => swiper.slidePrev()}>&lt;</button>
+      <button 
+        onClick={handlePrev} 
+        disabled={activeIndex === 0}
+      >
+        &lt;
+      </button>
       <span className="slider-counter">
-        {activeIndex + 1} / {totalSlides-1}
+        {Math.floor(activeIndex / (window.innerWidth <= 480 ? 1 : window.innerWidth <= 768 ? 2 : 3)) + 1} / 
+        {Math.ceil(totalSlides / (window.innerWidth <= 480 ? 1 : window.innerWidth <= 768 ? 2 : 3))}
       </span>
-      <button onClick={() => swiper.slideNext()}>&gt;</button>
+      <button 
+        onClick={handleNext}
+        disabled={activeIndex >= totalSlides - (window.innerWidth <= 480 ? 1 : window.innerWidth <= 768 ? 2 : 3)}
+      >
+        &gt;
+      </button>
     </div>
   );
 };

@@ -7,7 +7,7 @@ import penangImagine from "/Hero.jpg";
 const Hero = () => {
   return (
     <section className="hero-wrapper">
-      <div className="innerWidth hero-container flexCenter">
+      <div className="heroinnerWidth hero-container flexCenter">
         {/* Left Section */}
         <div className="flexColStart hero-left">
           <div className="hero-title">
@@ -35,7 +35,7 @@ const Hero = () => {
             transition={{ duration: 3, type: "spring" }}
             className="image-container"
           >
-            <img src="./Hero.jpg" alt="Penang Landscape" />
+            <img src="./PenangBridge.jpg" alt="Penang Landscape" />
           </motion.div>
         </div>
       </div>

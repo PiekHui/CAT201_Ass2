@@ -26,7 +26,7 @@ const Header = () => {
               setMenuOpened(false);
             }}
           >
-          <div className="h-menu" style={getMenuStyles(menuOpened)}>
+          <div className="Centerflex h-menu" style={getMenuStyles(menuOpened)}>
             <Link
               to="TouristSpot"
               spy={true}
@@ -34,7 +34,7 @@ const Header = () => {
               offset={0}
               duration={500}
             >
-              Tourist Spot
+              Tourist Spots
             </Link>
             <Link
               to="FoodBeverage"
@@ -43,7 +43,7 @@ const Header = () => {
               offset={-8}
               duration={500}
             >
-              Food Beverage
+              Food Beverages
             </Link>
             <Link
               to="Accommodation"
@@ -52,7 +52,7 @@ const Header = () => {
               offset={-100}
               duration={500}
             >
-              Accommodation
+              Accommodations
             </Link>
             <Link
               to="Facilities"

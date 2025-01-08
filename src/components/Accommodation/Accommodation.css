@@ -205,8 +205,11 @@
 }
 
 .innerWidth {
+  width: 100%;
+  margin: auto;
   max-width: 1200px;
-  margin: 0 auto;
+  position: relative;
+  z-index: 2;
 }
 
 .flexColStart {
@@ -219,4 +222,173 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/* Responsive Design for Accommodation */
+@media screen and (max-width: 1024px) {
+  .accommodation {
+    padding: 15px;
+    text-align: left;
+  }
+
+  .accommodation-header {
+    font-size: 1rem; 
+  }
+
+  .categories {
+    justify-content: space-around; /* Distribute buttons evenly */
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .category-button {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .swiper-slide {
+    width: 100% !important; /* Force full width */
+    margin-right: 0 !important; /* Remove right margin */
+  }
+
+  .accommodation-card {
+    width: 100%; /* Increased width for a slightly wider card */
+    margin: 0; /* Center card with spacing below */
+    box-sizing: border-box;
+  }
+
+  .image-container {
+    height: 220px; /* Reduce image height */
+    width:100%;
+  }
+
+  .description-overlay p {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .accommodation-header {
+    font-size: 1.6rem; /* Further decrease font size */
+  }
+
+  .categories {
+    justify-content: center; /* Center buttons */
+    gap: 8px;
+  }
+
+  .category-button {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+  }
+
+  .swiper-slide {
+    height: auto !important; /* Allow height to adjust to content */
+  }
+
+  .accommodation-card {
+    width: 90%; /* Slightly wider card for this breakpoint */
+    margin: 0;
+    padding: 15px;
+  }
+
+  .image-container {
+    height: 200px; /* Further reduce height */
+  }
+
+  .description-overlay p {
+    font-size: 1rem;
+  }
+
+  .slider-buttons button {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .accommodation {
+    display: flex;
+    overflow-x: auto;
+    flex-direction: column; /* Stack the containers vertically */
+    align-items: center; /* Center align the containers */
+    padding: 10px;
+    scroll-snap-type: x mandatory;
+  }
+
+  .accommodation-header {
+    font-size: 1.4rem; /* Even smaller font size for mobile */
+    margin-bottom: 15px;
+  }
+
+  .accommodation-header h2{
+    font-size: 2.5rem;
+  }
+
+  .categories {
+    display: block; /* Keep the category bar visible */
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .category-button {
+    font-size: 0.8rem;
+    padding: 5px 10px;
+    margin: 3px;
+  }
+
+  .swiper-container {
+    padding: 0 !important;
+  }
+
+  .swiper-slide {
+    padding: 0 10px;
+  }
+
+  .accommodation-card {
+    width: 100%; /* Slightly wider card for the smallest screens */
+    flex-shrink: 0;
+    margin: 20px 0px; /* Space between cards */
+    padding: 15px; /* Add padding inside the card */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow for better separation */
+    border-radius: 8px; /* Rounded corners for modern look */
+    scroll-snap-align: center;
+    background-color: #ffffff; /* Optional background color */
+  }
+
+  .image-container {
+    height: 150px; /* Adjust height for better visual */
+    margin-bottom: 10px;
+  }
+
+  .image-container img {
+    width: 100%; /* Ensure the image fills the container width */
+    height: 100%; /* Make the image fit the container height */
+    object-fit: cover; /* Keep the image aspect ratio and avoid distortion */
+  }
+
+  .description-overlay p {
+    font-size: 1rem;
+    margin: 0;
+  }
+
+  .slider-buttons {
+    gap: 15px;
+    margin: 15px 0;
+  }
+
+  .slider-buttons button {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+    border-radius: 50%;
+  }
+
+  .slider-counter {
+    font-size: 0.9rem;
+  }
 }
