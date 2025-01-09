@@ -129,7 +129,7 @@ const FoodBeverage = () => {
                   <h2 className="slide-title">{item.title}</h2>
                   <p className="slide-description">{item.description}</p>
                   <button className="read-more-btn"
-                    onClick={() => window.open(`https://www.google.com/search?q=${item.name}`, "_blank")}>
+                    onClick={() => window.open(`https://www.google.com/search?q=${item.title}`, "_blank")}>
                     Explore
                   </button>
                 </div>
